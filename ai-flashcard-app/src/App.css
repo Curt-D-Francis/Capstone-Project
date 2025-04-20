@@ -1,0 +1,427 @@
+/* Main layout styles */
+.min-h-screen {
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.min-h-screen.dark {
+  background-color: #111827; /* bg-gray-900 */
+  color: white;
+}
+
+.min-h-screen.light {
+  background-color: #f3f4f6; /* bg-gray-100 */
+  color: #111827; /* text-gray-900 */
+}
+
+/* Container styling */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem 1rem; /* py-12 px-4 */
+}
+
+/* Card container styling */
+.card-container {
+  max-width: 32rem; /* max-w-lg */
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+  overflow: hidden;
+  transition: background-color 0.3s;
+}
+
+.dark .card-container {
+  background-color: #1f2937; /* bg-gray-800 */
+  box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.2); /* shadow-blue-900/20 */
+}
+
+.light .card-container {
+  background-color: white;
+  box-shadow: 0 10px 15px -3px rgba(229, 231, 235, 0.5); /* shadow-gray-200 */
+}
+
+/* Header styling */
+.header {
+  padding: 1.5rem 2rem; /* py-6 px-8 */
+}
+
+.dark .header {
+  background-color: #1e3a8a; /* bg-blue-900 */
+}
+
+.light .header {
+  background-color: #2563eb; /* bg-blue-600 */
+}
+
+.header-title {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+  text-align: center;
+  color: white;
+}
+
+/* Form container */
+.form-container {
+  padding: 1.5rem; /* p-6 */
+}
+
+.form-group {
+  margin-bottom: 1.5rem; /* space-y-6 */
+}
+
+.form-field {
+  margin-bottom: 1rem; /* space-y-4 */
+}
+
+/* Form labels */
+.form-label {
+  display: block;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 600; /* font-semibold */
+}
+
+.dark .form-label {
+  color: #d1d5db; /* text-gray-300 */
+}
+
+.light .form-label {
+  color: #374151; /* text-gray-700 */
+}
+
+/* Form inputs */
+.text-input {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem; /* mt-1 */
+  padding: 0.75rem 1rem; /* px-4 py-3 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+  transition: all 0.3s;
+}
+
+.text-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* focus:ring-2 focus:ring-blue-500 */
+}
+
+.dark .text-input {
+  background-color: #374151; /* bg-gray-700 */
+  border: 1px solid #4b5563; /* border-gray-600 */
+  color: white;
+}
+
+.light .text-input {
+  background-color: #f9fafb; /* bg-gray-50 */
+  border: 1px solid #d1d5db; /* border-gray-300 */
+}
+
+/* Range input container */
+.range-container {
+  display: flex;
+  align-items: center;
+  margin-top: 0.25rem; /* mt-1 */
+}
+
+/* Range input styling */
+.range-input {
+  width: 100%;
+  height: 0.5rem; /* h-2 */
+  border-radius: 0.5rem; /* rounded-lg */
+  appearance: none;
+  cursor: pointer;
+}
+
+.dark .range-input {
+  background-color: #374151; /* bg-gray-700 */
+}
+
+.light .range-input {
+  background-color: #e5e7eb; /* bg-gray-200 */
+}
+
+.range-value {
+  margin-left: 0.75rem; /* ml-3 */
+  width: 2rem; /* w-8 */
+  text-align: center;
+}
+
+.dark .range-value {
+  color: #d1d5db; /* text-gray-300 */
+}
+
+.light .range-value {
+  color: #374151; /* text-gray-700 */
+}
+
+/* Button styling */
+.primary-button {
+  width: 100%;
+  padding: 0.75rem 1rem; /* py-3 px-4 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+  font-weight: 500; /* font-medium */
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.primary-button:not(.loading) {
+  background-color: #2563eb; /* bg-blue-600 */
+}
+
+.primary-button:not(.loading):hover {
+  background-color: #1d4ed8; /* hover:bg-blue-700 */
+}
+
+.primary-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.dark .primary-button:focus {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5), 0 0 0 4px #1f2937;
+}
+
+.primary-button.loading {
+  background-color: #6b7280; /* bg-gray-500 */
+  cursor: not-allowed;
+}
+
+/* Loading spinner container */
+.spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Loading spinner animation */
+.spinner {
+  animation: spin 1s linear infinite;
+  margin-right: 0.75rem; /* mr-3 */
+  margin-left: -0.25rem; /* -ml-1 */
+  height: 1.25rem; /* h-5 */
+  width: 1.25rem; /* w-5 */
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error message styling */
+.error-message {
+  padding: 1rem; /* p-4 */
+  border-radius: 0.5rem; /* rounded-lg */
+}
+
+.dark .error-message {
+  background-color: rgba(127, 29, 29, 0.5); /* bg-red-900/50 */
+  color: #fecaca; /* text-red-200 */
+}
+
+.light .error-message {
+  background-color: #fee2e2; /* bg-red-100 */
+  color: #991b1b; /* text-red-800 */
+}
+
+/* Flashcard section */
+.flashcard-section {
+  margin-top: 2rem; /* mt-8 */
+}
+
+.card-counter {
+  margin-bottom: 1rem; /* mb-4 */
+  text-align: center;
+  font-size: 0.875rem; /* text-sm */
+}
+
+.dark .card-counter {
+  color: #9ca3af; /* text-gray-400 */
+}
+
+.light .card-counter {
+  color: #6b7280; /* text-gray-500 */
+}
+
+/* Flashcard styling */
+.flashcard {
+  height: 16rem; /* h-64 */
+  width: 100%;
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  cursor: pointer;
+  position: relative;
+  transition: all 0.5s;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.flashcard.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Flashcard content */
+.flashcard-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem; /* p-6 */
+  text-align: center;
+}
+
+.flashcard-text {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 500; /* font-medium */
+}
+
+.dark .flashcard-text {
+  color: white;
+}
+
+.light .flashcard-text {
+  color: #1f2937; /* text-gray-800 */
+}
+
+/* Flashcard type indicator */
+.card-type {
+  position: absolute;
+  bottom: 0.5rem; /* bottom-2 */
+  right: 0.5rem; /* right-2 */
+  font-size: 0.75rem; /* text-xs */
+}
+
+.dark .card-type {
+  color: #9ca3af; /* text-gray-400 */
+}
+
+.light .card-type {
+  color: #6b7280; /* text-gray-500 */
+}
+
+/* Flashcard background colors */
+.dark .flashcard:not(.flipped) {
+  background-color: rgba(49, 46, 129, 0.3); /* bg-indigo-900/30 */
+}
+
+.light .flashcard:not(.flipped) {
+  background-color: #fef3c7; /* bg-yellow-100 */
+}
+
+.dark .flashcard.flipped {
+  background-color: rgba(30, 58, 138, 0.3); /* bg-blue-900/30 */
+}
+
+.light .flashcard.flipped {
+  background-color: #dbeafe; /* bg-blue-100 */
+}
+
+/* Navigation buttons container */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem; /* mt-4 */
+}
+
+/* Navigation button styling */
+.nav-button {
+  padding: 0.5rem 1.5rem; /* py-2 px-6 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+  font-size: 0.875rem; /* text-sm */
+  transition: background-color 0.3s;
+}
+
+.dark .nav-button {
+  background-color: #374151; /* bg-gray-700 */
+  color: white;
+}
+
+.dark .nav-button:hover {
+  background-color: #4b5563; /* hover:bg-gray-600 */
+}
+
+.light .nav-button {
+  background-color: white;
+  color: #374151; /* text-gray-700 */
+  border: 1px solid #d1d5db; /* border-gray-300 */
+}
+
+.light .nav-button:hover {
+  background-color: #f9fafb; /* hover:bg-gray-50 */
+}
+
+/* Footer styling */
+.footer {
+  margin-top: 2rem; /* mt-8 */
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 0.875rem; /* text-sm */
+}
+
+.dark .footer-text {
+  color: #9ca3af; /* text-gray-400 */
+}
+
+.light .footer-text {
+  color: #6b7280; /* text-gray-500 */
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  position: absolute;
+  top: 1rem; /* top-4 */
+  right: 1rem; /* right-4 */
+  padding: 0.5rem; /* p-2 */
+  border-radius: 9999px; /* rounded-full */
+}
+
+.dark .theme-toggle {
+  background-color: #374151; /* bg-gray-700 */
+  color: #fcd34d; /* text-yellow-300 */
+}
+
+.light .theme-toggle {
+  background-color: #dbeafe; /* bg-blue-100 */
+  color: #1e40af; /* text-blue-800 */
+}
+
+.theme-toggle-icon {
+  height: 1.5rem; /* h-6 */
+  width: 1.5rem; /* w-6 */
+}
+
+/* Card flip animations */
+@keyframes flipIn {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes flipOut {
+  from {
+    transform: rotateY(180deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
