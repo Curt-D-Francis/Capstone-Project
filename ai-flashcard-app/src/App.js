@@ -58,18 +58,18 @@ function App() {
       const data = await response.json();
       
       if (data.error) {
-        setError(`API Error: ${data.error}`);
-      } else {
-        const cards = data.flashcards || [];
+  setError(`API Error: ${data.error}`);
+} else {
+  const cards = data.flashcards || [];
 
-        if (cards.length > 0) {
-          setFlashcards(cards);
-          setCurrentCardIndex(0);
-          setIsFlipped(false);
-        } else {
-          setError('No flashcards were generated. Try a different subject.');
-        }
-      }
+  if (cards.length > 0) {
+    setFlashcards(cards);
+    setCurrentCardIndex(0);
+    setIsFlipped(false);
+  } else {
+    setError('No flashcards were generated. Try a different subject.');
+  }
+}
 
     } catch (err) {
       setError(`Error: ${err.message}`);
