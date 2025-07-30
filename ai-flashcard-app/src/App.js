@@ -60,13 +60,8 @@ function App() {
       if (data.error) {
         setError(`API Error: ${data.error}`);
       } else {
-        // Parse the content as JSON
-        const contentString = data.content;
-        const contentObj = JSON.parse(contentString);
-        
-        // Assuming the response has a "flashcards" property containing the array
-        const cards = contentObj.flashcards || [];
-        
+        const cards = data.flashcards || [];
+
         if (cards.length > 0) {
           setFlashcards(cards);
           setCurrentCardIndex(0);
@@ -75,6 +70,7 @@ function App() {
           setError('No flashcards were generated. Try a different subject.');
         }
       }
+
     } catch (err) {
       setError(`Error: ${err.message}`);
     } finally {
