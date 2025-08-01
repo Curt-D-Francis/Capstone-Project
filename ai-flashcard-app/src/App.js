@@ -92,6 +92,23 @@ function App() {
     );
   };
 
+  const downloadFlashcardsAsTxt = () => {
+  if (flashcards.length === 0) return;
+
+  const lines = flashcards.map(card => `${card.question}\t${card.answer}`);
+  const blob = new Blob([lines.join('\n')], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${subject.replace(/\s+/g, '_')}_flashcards.txt`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+};
+
+
   const toggleFlip = () => {
     setIsFlipped(!isFlipped);
   };
@@ -121,7 +138,7 @@ function App() {
         <div className="card-container">
           {/* Header */}
           <div className="header">
-            <h1 className="header-title">Flashcard Generator</h1>
+            <h1 className="header-title">Study Buddy</h1>
           </div>
           
           {/* Form */}
@@ -216,11 +233,21 @@ function App() {
             )}
           </div>
         </div>
+
+        {flashcards.length > 0 && (
+          <button
+            className="primary-button mt-4"
+            onClick={downloadFlashcardsAsTxt}
+          >
+            Export to Quizlet
+          </button>
+        )}
+
         
         {/* Footer */}
         <div className="footer">
           <p className="footer-text">
-            Powered by OpenAI • Built with React and Flask
+            Powered by Gemma3 • Built with React and Flask
           </p>
         </div>
       </div>
